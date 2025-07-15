@@ -108,5 +108,5 @@ navsat_transform_node:
     broadcast_cartesian_transform: false
     publish_filtered_gps: false
     use_odometry_yaw: true  # Use the EKF output for heading information
-    wait_for_datum: true
+    wait_for_datum: false
     datum: [13.763656, 100.527998, 0.0]  # GPS datum matching Gazebo world
