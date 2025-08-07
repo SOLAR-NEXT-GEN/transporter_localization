@@ -43,19 +43,6 @@ ekf_filter_node_odom:
     odom0_pose_rejection_threshold: 5.0
     odom0_twist_rejection_threshold: 1.0
 
-    # odom1: /odometry/wheel
-    # odom1_config: [true,  true,  true,
-    #               false, false, false,
-    #               true,  true,  true,
-    #               false, false, true,
-    #               false, false, false]
-    # odom1_queue_size: 10
-    # odom1_nodelay: true
-    # odom1_differential: false
-    # odom1_relative: false
-    # odom1_pose_rejection_threshold: 2.0
-    # odom1_twist_rejection_threshold: 1.0
-
     imu0: /imu
     imu0_config: [false, false, false,
                   false, false, true,
@@ -102,11 +89,10 @@ navsat_transform_node:
     frequency: 10.0
     delay: 3.0
     magnetic_declination_radians: 0.0
-    yaw_offset: 3.1428  # CRITICAL: 180 degrees rotation to convert from ENU (Gazebo) to NWU (ROS)
+    yaw_offset: 3.1428
     zero_altitude: true
-    use_sim_time: True  # Fixed parameter name (was use_simtime)
+    use_sim_time: True
     broadcast_cartesian_transform: false
     publish_filtered_gps: false
-    use_odometry_yaw: true  # Use the EKF output for heading information
+    use_odometry_yaw: false
     wait_for_datum: false
-    datum: [13.763656, 100.527998, 0.0]  # GPS datum matching Gazebo world

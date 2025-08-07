@@ -3,9 +3,7 @@
 ekf_filter_node_odom:
   ros__parameters:
 
-    #use_sim_time: True
-
-    frequency: 100.0
+    frequency: 50.0
     sensor_timeout: 1.0
 
     two_d_mode: true
@@ -42,19 +40,6 @@ ekf_filter_node_odom:
     odom0_relative: false
     odom0_pose_rejection_threshold: 5.0
     odom0_twist_rejection_threshold: 1.0
-
-    # odom1: /odometry/wheel
-    # odom1_config: [true,  true,  true,
-    #               false, false, false,
-    #               true,  true,  true,
-    #               false, false, true,
-    #               false, false, false]
-    # odom1_queue_size: 10
-    # odom1_nodelay: true
-    # odom1_differential: false
-    # odom1_relative: false
-    # odom1_pose_rejection_threshold: 2.0
-    # odom1_twist_rejection_threshold: 1.0
 
     imu0: /imu
     imu0_config: [false, false, false,
@@ -104,9 +89,7 @@ navsat_transform_node:
     magnetic_declination_radians: 0.0
     yaw_offset: 0.0
     zero_altitude: true
-    #use_sim_time: True  # Fixed parameter name (was use_simtime)
     broadcast_cartesian_transform: false
     publish_filtered_gps: false
-    use_odometry_yaw: false  # Use the EKF output for heading information
+    use_odometry_yaw: false
     wait_for_datum: false
-    datum: [13.763656, 100.527998, 0.0]  # GPS datum matching Gazebo world
